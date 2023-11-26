@@ -13,6 +13,5 @@ public class Teacher {
         this.lname = lname;
         this.fname = fname;
         this.id = id;
-
     }
 }

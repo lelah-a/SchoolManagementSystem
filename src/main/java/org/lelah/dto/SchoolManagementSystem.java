@@ -17,23 +17,27 @@ public class SchoolManagementSystem {
     public void printStudents() {
     }
 
-    public void findStudent() {
+    public Student findStudent() {
     }
 
+    public void addCourse() {
+    }
 
+    public void registerCourse() {
+    }
 
+    public void addTeacher() {
+    }
 
+    public Course findCourse() {
+    }
 
+    public void printDepartments() {
+    }
 
+    public void addStudent() {
+    }
 
-
-
-
-
-
-
-
-
-
-
+    public Teacher findTeacher() {
+    }
 }
