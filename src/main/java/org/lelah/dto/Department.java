@@ -10,5 +10,4 @@ public class Department {
         this.nextId = nextId;
         this.departmentName = departmentName;
     }
-
 }
