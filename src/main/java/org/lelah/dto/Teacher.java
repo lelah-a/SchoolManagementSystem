@@ -1,6 +1,7 @@
 package org.lelah.dto;
 
 public class Teacher {
+    private static int nextId = 1;
     private String lname;
     private String fname;
     private Department department;
@@ -12,6 +13,6 @@ public class Teacher {
         this.department = department;
         this.lname = lname;
         this.fname = fname;
-        this.id = id;
+        this.id = String.format("T%03d", nextId++);;
     }
 }
