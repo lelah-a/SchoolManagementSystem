@@ -17,6 +17,7 @@ public class Main {
         SchoolManagementSystem.addCourse();
 
         Department department1 = new Department();
+        SchoolManagementSystem.addDepartment();
 
 
 

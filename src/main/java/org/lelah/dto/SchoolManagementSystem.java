@@ -17,7 +17,15 @@ public class SchoolManagementSystem {
     private static final int MAX_STUDENTS_PER_COURSE = 5;
 
     public void findDepartment() {
-
+        for () {
+            if () {
+                System.out.println("Found department: " + );
+            }
+        }
+    }
+    public void addDepartment() {
+    }
+    public void printDepartments() {
     }
 
     public void printTeachers() {
@@ -26,8 +34,6 @@ public class SchoolManagementSystem {
     public void modifyCourseTeacher() {
     }
 
-    public void addDepartment() {
-    }
 
     public void printStudents() {
     }
@@ -50,14 +56,22 @@ public class SchoolManagementSystem {
     }
 
     public Course findCourse() {
+        for () {
+            if () {
+                System.out.println("Found course: " + );
+            }
+        }
     }
 
-    public void printDepartments() {
-    }
 
     public void addStudent() {
     }
 
     public Teacher findTeacher() {
+        for () {
+            if () {
+                System.out.println("Found teacher: " + );
+            }
+        }
     }
 }
