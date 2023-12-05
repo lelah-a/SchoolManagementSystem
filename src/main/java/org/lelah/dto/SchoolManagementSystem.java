@@ -33,10 +33,9 @@ public class SchoolManagementSystem {
     }
 
     public Student findStudent() {
-
         for () {
             if () {
-                System.out.println("Found student: " + Student.get);
+                System.out.println("Found student: " + );
             }
         }
     }
