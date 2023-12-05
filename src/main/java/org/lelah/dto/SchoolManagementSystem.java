@@ -1,7 +1,13 @@
 package org.lelah.dto;
 
-import java.util.Calendar;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
 public class SchoolManagementSystem {
     private static final int MAX_DEPARTMENTS = 5;
     private static final int MAX_STUDENTS = 200;
@@ -27,6 +33,12 @@ public class SchoolManagementSystem {
     }
 
     public Student findStudent() {
+
+        for () {
+            if () {
+                System.out.println("Found student: " + Student.get);
+            }
+        }
     }
 
     public void addCourse() {

@@ -1,5 +1,12 @@
 package org.lelah.dto;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Course {
     private double credit;
     private String id;

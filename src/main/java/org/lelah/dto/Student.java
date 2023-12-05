@@ -1,5 +1,12 @@
 package org.lelah.dto;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Student {
     private String fname;
     private String lname;
