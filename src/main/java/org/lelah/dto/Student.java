@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class Student {
     private static int nextId = 1;
+    private static final int MAX_COURSES_PER_STUDENT = 5;
 
     private String studentId;
     private String fname;
@@ -20,7 +21,6 @@ public class Student {
     private Department department;
 
     /**
-     *
      * @param fname
      * @param lname
      * @param department
@@ -30,7 +30,7 @@ public class Student {
         this.name = fname + " " + lname;
         this.fname = fname;
         this.department = department;
-        this.courses = courses;
+        this.courses = new Course[MAX_COURSES_PER_STUDENT];
         this.lname = lname;
     }
 }

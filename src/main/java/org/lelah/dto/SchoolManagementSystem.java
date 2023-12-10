@@ -37,29 +37,35 @@ public class SchoolManagementSystem {
 
     /**
      * method to add a department until the max number of departments are reached
+     *
      * @param department
      */
     public void addDepartment(Department department) {
         if (departmentNum < MAX_DEPARTMENTS) {
             departments[departmentNum] = department;
+            departmentNum++;
+        } else if(departments.equals(null)) {
+            break;
         }
         else {
-        System.out.printf("There are already %d departments, add department failed.", MAX_DEPARTMENTS);
+            System.out.printf("There are already %d departments, add department failed.", MAX_DEPARTMENTS);
         }
     }
 
     /**
      * method to find a department using the department id
      * if the id doesn't match anything return null
+     *
      * @param departmentId
      * @return
      */
     public Department findDepartment(String departmentId) {
         for (Department department : departments) {
-            if (department.getDepartmentId() == departmentId) {
+            if (department.getDepartmentId().equals(departmentId)) {
                 return department;
             }
-        } return null;
+        }
+        return null;
     }
 
     /**
@@ -75,11 +81,13 @@ public class SchoolManagementSystem {
 
     /**
      * method to add a teacher until the maximum amount of teachers are reached
+     *
      * @param teacher
      */
     public void addTeacher(Teacher teacher) {
         if (teacherNum < MAX_TEACHERS) {
             teachers[teacherNum] = teacher;
+            teacherNum++;
         } else {
             System.out.printf("There are already %d teachers, add teacher failed.", MAX_TEACHERS);
         }
@@ -88,15 +96,17 @@ public class SchoolManagementSystem {
     /**
      * method to find a teacher using their id
      * if the id doesn't match anything return null
+     *
      * @param teacherId
      * @return
      */
     public Teacher findTeacher(String teacherId) {
-        for (Teacher teacher : teachers ) {
-            if (teacher.getTeacherId() == teacherId) {
-                System.out.println("Found teacher: " + teacherId);
+        for (Teacher teacher : teachers) {
+            if (teacher.getTeacherId().equals(teacherId)) {
+                return teacher;
             }
-        } return null;
+        }
+        return null;
     }
 
     /**
@@ -119,12 +129,12 @@ public class SchoolManagementSystem {
     }
 
     /**
-     *
      * @param student
      */
     public void addStudent(Student student) {
         if (studentNum < MAX_STUDENTS) {
             students[studentNum] = student;
+            studentNum++;
         } else {
             System.out.printf("There are already %d students, add student failed.", MAX_STUDENTS);
         }
@@ -133,15 +143,17 @@ public class SchoolManagementSystem {
     /**
      * method to find a student using their Id
      * if the id doesn't match anything return null
+     *
      * @param studentId
      * @return
      */
     public Student findStudent(String studentId) {
         for (Student student : students) {
-            if (student.getStudentId() == studentId) {
-                System.out.println("Found student: " + studentId);
+            if (student.getStudentId().equals(studentId)) {
+                return student;
             }
-        } return null;
+        }
+        return null;
     }
 
     /**
@@ -157,11 +169,13 @@ public class SchoolManagementSystem {
 
     /**
      * method to add a course until the max number of courses is reached
+     *
      * @param course
      */
     public void addCourse(Course course) {
         if (courseNum < MAX_COURSES) {
             courses[courseNum] = course;
+            courseNum++;
         } else {
             System.out.printf("There are already %d courses, add course failed.", MAX_COURSES);
         }
@@ -170,23 +184,31 @@ public class SchoolManagementSystem {
     /**
      * method to find course using the course id
      * if the id doesn't match anything return null
+     *
      * @param courseId
      * @return
      */
     public Course findCourse(String courseId) {
         for (Course course : courses) {
-            if (course.getCourseId() == courseId) {
-                System.out.println("Found course: " + courseId);
+            if (course.getCourseId().equals(courseId)) {
+                return course;
             }
-        } return null;
+        }
+        return null;
     }
+}
 
     /**
      *
      */
-    public void registerCourse() {
-    }
-}
+    /*public void registerCourse() {
+        Student student = findStudent("");
+        Course course = findCourse("");
+        if (student != null && course != null) {
+            student.setCourses(course);
+
+        }
+    }*/
 
 
 

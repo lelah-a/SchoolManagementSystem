@@ -12,6 +12,8 @@ import lombok.ToString;
 public class Course {
     private static int nextId = 1;
     private static final int MAX_STUDENTS_PER_COURSE = 5;
+    private static final int MAX_COURSES = 30;
+
 
     private String courseId;
     private double credit;

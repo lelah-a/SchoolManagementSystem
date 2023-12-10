@@ -11,8 +11,13 @@ public class Main {
         Student student1 = new Student("Lelah", "Atallah",department1);
         Teacher teacher1 = new Teacher("Taylor", "Swift", department1);
         schoolManagementSystem.addStudent(student1);
+        schoolManagementSystem.addTeacher(teacher1);
         schoolManagementSystem.addCourse(course1);
         schoolManagementSystem.addDepartment(department1);
+        schoolManagementSystem.findStudent("S001");
+        schoolManagementSystem.findTeacher("T001");
+        schoolManagementSystem.findDepartment("D001");
+        schoolManagementSystem.findCourse("C001");
 
         System.out.println(schoolManagementSystem);
     }

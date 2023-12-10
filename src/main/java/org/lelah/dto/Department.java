@@ -11,6 +11,8 @@ import lombok.ToString;
 @ToString
 public class Department {
     private static int nextId = 1;
+    private static final int MAX_DEPARTMENTS = 5;
+
 
     private String departmentId;
     private String departmentName;

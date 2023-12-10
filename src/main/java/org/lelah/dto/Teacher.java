@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class Teacher {
     private static int nextId = 1;
+    private static final int MAX_TEACHERS = 20;
 
     private String teacherId;
     private String lname;
