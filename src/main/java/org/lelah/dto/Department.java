@@ -12,11 +12,15 @@ import lombok.ToString;
 public class Department {
     private static int nextId = 1;
 
-    private String id;
+    private String departmentId;
     private String departmentName;
 
+    /**
+     *
+     * @param departmentName
+     */
     public Department(String departmentName) {
-        this.id = String.format("D%03d", nextId++);
+        this.departmentId = String.format("D%03d", nextId++);
         this.departmentName = departmentName;
     }
 }
