@@ -24,9 +24,8 @@ public class Student {
      * @param fname
      * @param lname
      * @param department
-     * @param courses
      */
-    public Student(String fname, String lname, Department department, Course[] courses) {
+    public Student(String fname, String lname, Department department) {
         this.studentId = String.format("S%03d", nextId++);
         this.name = fname + " " + lname;
         this.fname = fname;

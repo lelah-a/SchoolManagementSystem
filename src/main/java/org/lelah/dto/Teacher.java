@@ -20,14 +20,12 @@ public class Teacher {
 
     /**
      *
-     * @param name
      * @param department
      * @param lname
      * @param fname
      */
-    public Teacher(String name, Department department, String lname, String fname) {
-        this.teacherId = String.format("T%03d", nextId++);;
-        this.name = name;
+    public Teacher(String fname, String lname, Department department) {
+        this.teacherId = String.format("T%03d", nextId++);
         this.department = department;
         this.lname = lname;
         this.fname = fname;

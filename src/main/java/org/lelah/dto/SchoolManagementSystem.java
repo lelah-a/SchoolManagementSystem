@@ -36,19 +36,21 @@ public class SchoolManagementSystem {
     }
 
     /**
-     * method to add a department until the maximum number of departments are reached
+     * method to add a department until the max number of departments are reached
      * @param department
      */
     public void addDepartment(Department department) {
         if (departmentNum < MAX_DEPARTMENTS) {
             departments[departmentNum] = department;
-        } else {
+        }
+        else {
         System.out.printf("There are already %d departments, add department failed.", MAX_DEPARTMENTS);
         }
     }
 
     /**
-     * method to find a department using the department Id
+     * method to find a department using the department id
+     * if the id doesn't match anything return null
      * @param departmentId
      * @return
      */
@@ -65,10 +67,11 @@ public class SchoolManagementSystem {
      */
     public void printDepartments() {
         for (int i = 0; i < MAX_DEPARTMENTS; i++) {
-            System.out.println(departments);
+            if (departments != null) {
+                System.out.println(departments);
+            }
         }
     }
-
 
     /**
      * method to add a teacher until the maximum amount of teachers are reached
@@ -82,9 +85,9 @@ public class SchoolManagementSystem {
         }
     }
 
-
     /**
      * method to find a teacher using their id
+     * if the id doesn't match anything return null
      * @param teacherId
      * @return
      */
@@ -100,13 +103,19 @@ public class SchoolManagementSystem {
      *
      */
     public void printTeachers(Teacher teacher) {
+        for (int i = 0; i < MAX_TEACHERS; i++) {
+            if (teachers != null) {
+                System.out.println(teachers);
+            }
         }
+
     }
 
     /**
-     *
+     * method to modify the course teacher
      */
     public void modifyCourseTeacher() {
+
     }
 
     /**
@@ -118,11 +127,15 @@ public class SchoolManagementSystem {
             students[studentNum] = student;
         } else {
             System.out.printf("There are already %d students, add student failed.", MAX_STUDENTS);
-
         }
     }
 
-
+    /**
+     * method to find a student using their Id
+     * if the id doesn't match anything return null
+     * @param studentId
+     * @return
+     */
     public Student findStudent(String studentId) {
         for (Student student : students) {
             if (student.getStudentId() == studentId) {
@@ -136,7 +149,9 @@ public class SchoolManagementSystem {
      */
     public void printStudents() {
         for (int i = 0; i < MAX_STUDENTS; i++) {
-            System.out.println(students);
+            if (students != null) {
+                System.out.println(students);
+            }
         }
     }
 
@@ -154,6 +169,7 @@ public class SchoolManagementSystem {
 
     /**
      * method to find course using the course id
+     * if the id doesn't match anything return null
      * @param courseId
      * @return
      */
@@ -169,7 +185,8 @@ public class SchoolManagementSystem {
      *
      */
     public void registerCourse() {
-
     }
-
 }
+
+
+

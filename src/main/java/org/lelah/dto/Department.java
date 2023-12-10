@@ -23,4 +23,6 @@ public class Department {
         this.departmentId = String.format("D%03d", nextId++);
         this.departmentName = departmentName;
     }
+
+
 }

@@ -6,24 +6,14 @@ public class Main {
     public static void main(String[] args) {
         SchoolManagementSystem schoolManagementSystem = new SchoolManagementSystem();
 
-        Department department1 = new Department("Science", );
-        Student student1 = new Student("hgj", "hf","Science", 5);
-        schoolManagementSystem.findStudent("S001");
-        schoolManagementSystem.addStudent();
-        schoolManagementSystem.printStudents();
+        Department department1 = new Department("Science");
+        Course course1 = new Course("Chemistry", 4, department1);
+        Student student1 = new Student("Lelah", "Atallah",department1);
+        Teacher teacher1 = new Teacher("Taylor", "Swift", department1);
+        schoolManagementSystem.addStudent(student1);
+        schoolManagementSystem.addCourse(course1);
+        schoolManagementSystem.addDepartment(department1);
 
-        Teacher teacher1 = new Teacher();
-        schoolManagementSystem.addTeacher();
-        schoolManagementSystem.findTeacher("T001");
-        schoolManagementSystem.printTeachers();
-
-        Department department1 = new Department();
-        schoolManagementSystem.findDepartment("D001");
-
-        Course course1 = new Course("", "", 5, 3, "");
-        schoolManagementSystem.addCourse();
-        schoolManagementSystem.findCourse("C001");
-        schoolManagementSystem.registerCourse();
-
+        System.out.println(schoolManagementSystem);
     }
 }

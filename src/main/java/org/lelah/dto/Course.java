@@ -22,13 +22,11 @@ public class Course {
 
     /**
      *
-     * @param teacher
      * @param courseName
-     * @param students
      * @param credit
      * @param department
      */
-    public Course(Teacher teacher, String courseName, Student[] students, double credit , int studentNum, Department department) {
+    public Course(String courseName, double credit, Department department) {
         this.courseId = String.format("C%03d", nextId++);
         this.teacher = teacher;
         this.courseName = courseName;
