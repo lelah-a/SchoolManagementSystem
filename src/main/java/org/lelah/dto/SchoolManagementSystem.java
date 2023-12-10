@@ -15,6 +15,19 @@ public class SchoolManagementSystem {
     private static final int MAX_COURSES = 30;
     private static final int MAX_COURSES_PER_STUDENT = 5;
     private static final int MAX_STUDENTS_PER_COURSE = 5;
+    private static int nextId = 1;
+
+    private Course[] courses;
+    private Department[] departments;
+    private Student[] students;
+    private Teacher[] teachers;
+
+
+
+
+
+
+
 
     public void findDepartment() {
         for () {
@@ -23,7 +36,16 @@ public class SchoolManagementSystem {
             }
         }
     }
-    public void addDepartment() {
+    public void addDepartment(Department department) {
+        if (dishes[0] == null) {
+            dishes[0] = dish;
+            calcPrice();
+        } else if (dishes[1] == null) {
+            dishes[1] = dish;
+            calcPrice();
+        } else {
+            System.out.printf("There are already %d dishes, add dish failed.", MAX_DISH_NUM);
+
     }
     public void printDepartments() {
     }

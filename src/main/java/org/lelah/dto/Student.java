@@ -3,28 +3,30 @@ package org.lelah.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @EqualsAndHashCode
+@ToString
 public class Student {
+    private static int nextId = 1;
+
+    private String id;
     private String fname;
     private String lname;
+    private String name;
     private Course[] courses;
-    private String id;
     private int courseNum;
-    private int nextId;
     private Department department;
-    private String name = fname + " " + lname;;
 
-    public void toString(int nextId, String name, String fname, int courseNum, Department department, Course[] courses, String lname, String id) {
-        this.nextId = nextId;
-        this.name = name;
+    public Student(String fname, String lname, int courseNum, Department department, Course[] courses) {
+        this.id = String.format("S%03d", nextId++);
+        this.name = fname + " " + lname;
         this.fname = fname;
         this.courseNum = courseNum;
         this.department = department;
         this.courses = courses;
         this.lname = lname;
-        this.id = id;
     }
 }
