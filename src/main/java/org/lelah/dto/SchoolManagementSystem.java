@@ -34,7 +34,6 @@ public class SchoolManagementSystem {
 
     /**
      * method to add a department until the max number of departments are reached
-     *
      * @param department
      */
     public void addDepartment(Department department) {
@@ -208,26 +207,33 @@ public class SchoolManagementSystem {
 
         if (studentId == null || courseId == null) {
             System.out.println("This student or course do not exist. ");
-        } else if (coursesRegistered == MAX_COURSES_PER_STUDENT) {
-            System.out.println("Maximum amount of courses have been registered.");
-        } else if (studentsRegistered == MAX_STUDENTS_PER_COURSE) {
-            System.out.println("Maximum amount of students have registered for the course");
-        } else {
-            for (Course registeredCourse : student.getCourses()) {
+            return;
+        }
+        for (Course registeredCourse : student.getCourses()) {
                 if (registeredCourse != null) {
                     coursesRegistered++;
                 }
-            }
-            for (Student registeredStudent : course.getStudents()) {
+        }
+        for (Student registeredStudent : course.getStudents()) {
                 if (registeredStudent != null) {
                     studentsRegistered++;
+                }
+        }
+        if (coursesRegistered >= MAX_COURSES_PER_STUDENT) {
+            System.out.println("Maximum amount of courses have been registered");
+        } else if (studentsRegistered >= MAX_STUDENTS_PER_COURSE) {
+            System.out.println("Maximum amount of students have registered");
+        }
+        else {
+            if (courseNum < MAX_COURSES_PER_STUDENT && studentNum < MAX_STUDENTS_PER_COURSE) {
+                if (addStudentToCourse(student, course) && registerCourseForStudent(student, course)) {
+                    System.out.println("Student sucessfully registered");
+                } else {
+                    System.out.println("Registration failed");
                 }
             }
         }
     }
-
-
-
 
     private boolean addStudentToCourse(Student student, Course course) {
         int studentNum = getStudentNum();

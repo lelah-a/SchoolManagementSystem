@@ -18,11 +18,11 @@ public class Teacher {
 
     /**
      *
-     * @param department
+     * @param departmentId
      * @param lname
      * @param fname
      */
-    public Teacher(String fname, String lname, Department department) {
+    public Teacher(String fname, String lname, String departmentId) {
         this.teacherId = String.format("T%03d", nextId++);
         this.department = department;
         this.lname = lname;

@@ -23,9 +23,9 @@ public class Course {
     /**
      * @param courseName
      * @param credit
-     * @param department
+     * @param departmentId
      */
-    public Course(String courseName, double credit, Department department) {
+    public Course(String courseName, double credit, String departmentId) {
         this.courseId = String.format("C%03d", nextId++);
         this.teacher = teacher;
         this.courseName = courseName;
@@ -33,7 +33,6 @@ public class Course {
         this.credit = credit;
         this.department = department;
     }
-
 
     @Override
     public String toString() {
