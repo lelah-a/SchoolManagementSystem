@@ -23,8 +23,10 @@ public class Main {
 
         Course course1 = new Course("Chemistry", 3,"D001");
         school.addCourse(course1);
-        school.modifyCourseTeacher("C001", new Teacher("Gracie", "Abrams", "D002"));
+        System.out.println("Courses: ");
         school.displayCourses();
+        school.modifyCourseTeacher("C001", new Teacher("Gracie", "Abrams", "D002"));
+
 
         school.registerCourse("S001", "C001");
     }
