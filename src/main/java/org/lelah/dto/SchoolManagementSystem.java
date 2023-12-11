@@ -4,12 +4,10 @@ package org.lelah.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
 public class SchoolManagementSystem {
     private static final int MAX_DEPARTMENTS = 5;
     private static final int MAX_STUDENTS = 200;
@@ -44,8 +42,6 @@ public class SchoolManagementSystem {
         if (departmentNum < MAX_DEPARTMENTS) {
             departments[departmentNum] = department;
             departmentNum++;
-        } else if(departments.equals(null)) {
-            break;
         }
         else {
             System.out.printf("There are already %d departments, add department failed.", MAX_DEPARTMENTS);
@@ -71,17 +67,14 @@ public class SchoolManagementSystem {
     /**
      * method to print all the departments
      */
-    public void printDepartments() {
+    public void displayDepartments() {
         for (int i = 0; i < MAX_DEPARTMENTS; i++) {
-            if (departments != null) {
-                System.out.println(departments);
-            }
+            System.out.println(departments[i]);
         }
     }
 
     /**
      * method to add a teacher until the maximum amount of teachers are reached
-     *
      * @param teacher
      */
     public void addTeacher(Teacher teacher) {
@@ -112,13 +105,10 @@ public class SchoolManagementSystem {
     /**
      *
      */
-    public void printTeachers(Teacher teacher) {
+    public void displayTeachers() {
         for (int i = 0; i < MAX_TEACHERS; i++) {
-            if (teachers != null) {
-                System.out.println(teachers);
-            }
+            System.out.println(teachers[i]);
         }
-
     }
 
     /**
@@ -159,17 +149,14 @@ public class SchoolManagementSystem {
     /**
      *
      */
-    public void printStudents() {
+    public void displayStudents() {
         for (int i = 0; i < MAX_STUDENTS; i++) {
-            if (students != null) {
-                System.out.println(students);
-            }
+            System.out.println(students[i]);
         }
     }
 
     /**
      * method to add a course until the max number of courses is reached
-     *
      * @param course
      */
     public void addCourse(Course course) {
@@ -184,7 +171,6 @@ public class SchoolManagementSystem {
     /**
      * method to find course using the course id
      * if the id doesn't match anything return null
-     *
      * @param courseId
      * @return
      */
@@ -196,19 +182,17 @@ public class SchoolManagementSystem {
         }
         return null;
     }
-}
 
     /**
      *
      */
-    /*public void registerCourse() {
-        Student student = findStudent("");
-        Course course = findCourse("");
-        if (student != null && course != null) {
-            student.setCourses(course);
-
+    public void displayCourses() {
+        for (int i = 0; i < MAX_COURSES; i++) {
+           System.out.println(courses[i]);
         }
-    }*/
+    }
 
+    public void registerCourse() {
+    }
 
-
+}

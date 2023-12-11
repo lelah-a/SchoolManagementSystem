@@ -3,12 +3,12 @@ package org.lelah.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+
+import java.util.Arrays;
 
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
 public class Student {
     private static int nextId = 1;
     private static final int MAX_COURSES_PER_STUDENT = 5;
@@ -32,5 +32,17 @@ public class Student {
         this.department = department;
         this.courses = new Course[MAX_COURSES_PER_STUDENT];
         this.lname = lname;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId='" + studentId + '\'' +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                ", name='" + name + '\'' +
+                ", courses=" + Arrays.toString(courses) +
+                ", department=" + department +
+                '}';
     }
 }

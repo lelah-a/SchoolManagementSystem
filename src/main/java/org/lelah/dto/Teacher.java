@@ -3,15 +3,12 @@ package org.lelah.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
 public class Teacher {
     private static int nextId = 1;
-    private static final int MAX_TEACHERS = 20;
 
     private String teacherId;
     private String lname;
@@ -30,5 +27,16 @@ public class Teacher {
         this.department = department;
         this.lname = lname;
         this.fname = fname;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacherId='" + teacherId + '\'' +
+                ", lname='" + lname + '\'' +
+                ", fname='" + fname + '\'' +
+                ", department=" + department +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
