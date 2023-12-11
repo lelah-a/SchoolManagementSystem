@@ -7,22 +7,25 @@ public class Main {
         SchoolManagementSystem school = new SchoolManagementSystem();
 
         Department department1 = new Department("Science");
+        school.addDepartment(department1);
         System.out.println("Departments: ");
         school.displayDepartments();
 
         Teacher teacher1 = new Teacher("Taylor", "Swift", "D001");
+        school.addTeacher(teacher1);
         System.out.println("Teachers: ");
         school.displayTeachers();
 
         Student student1 = new Student("Lelah", "Atallah","D001");
+        school.addStudent(student1);
         System.out.println("Students: ");
         school.displayStudents();
 
         Course course1 = new Course("Chemistry", 3,"D001");
+        school.addCourse(course1);
+        school.modifyCourseTeacher("C001", new Teacher("Gracie", "Abrams", "D002"));
         school.displayCourses();
 
         school.registerCourse("S001", "C001");
-
-        System.out.println(school);
     }
 }
