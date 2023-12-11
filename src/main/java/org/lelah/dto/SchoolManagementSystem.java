@@ -1,6 +1,5 @@
 package org.lelah.dto;
 
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,8 +41,7 @@ public class SchoolManagementSystem {
         if (departmentNum < MAX_DEPARTMENTS) {
             departments[departmentNum] = department;
             departmentNum++;
-        }
-        else {
+        } else {
             System.out.printf("There are already %d departments, add department failed.", MAX_DEPARTMENTS);
         }
     }
@@ -75,6 +73,7 @@ public class SchoolManagementSystem {
 
     /**
      * method to add a teacher until the maximum amount of teachers are reached
+     *
      * @param teacher
      */
     public void addTeacher(Teacher teacher) {
@@ -114,8 +113,14 @@ public class SchoolManagementSystem {
     /**
      * method to modify the course teacher
      */
-    public void modifyCourseTeacher() {
-
+    public void modifyCourseTeacher(String courseId, Teacher newTeacher) {
+        Course courseToUpdate = findCourse(courseId);
+        if (courseToUpdate != null) {
+            courseToUpdate.setTeacher(newTeacher);
+            System.out.println("Course teacher modified successfully!");
+        } else {
+            System.out.println("Course not found");
+        }
     }
 
     /**
@@ -157,6 +162,7 @@ public class SchoolManagementSystem {
 
     /**
      * method to add a course until the max number of courses is reached
+     *
      * @param course
      */
     public void addCourse(Course course) {
@@ -171,6 +177,7 @@ public class SchoolManagementSystem {
     /**
      * method to find course using the course id
      * if the id doesn't match anything return null
+     *
      * @param courseId
      * @return
      */
@@ -188,11 +195,56 @@ public class SchoolManagementSystem {
      */
     public void displayCourses() {
         for (int i = 0; i < MAX_COURSES; i++) {
-           System.out.println(courses[i]);
+            System.out.println(courses[i]);
         }
     }
 
-    public void registerCourse() {
+    public void registerCourse(String studentId, String courseId) {
+        int coursesRegistered = 0;
+        int studentsRegistered = 0;
+
+        Student student = findStudent(studentId);
+        Course course = findCourse(courseId);
+
+        if (studentId == null || courseId == null) {
+            System.out.println("This student or course do not exist. ");
+        } else if (coursesRegistered == MAX_COURSES_PER_STUDENT) {
+            System.out.println("Maximum amount of courses have been registered.");
+        } else if (studentsRegistered == MAX_STUDENTS_PER_COURSE) {
+            System.out.println("Maximum amount of students have registered for the course");
+        } else {
+            for (Course registeredCourse : student.getCourses()) {
+                if (registeredCourse != null) {
+                    coursesRegistered++;
+                }
+            }
+            for (Student registeredStudent : course.getStudents()) {
+                if (registeredStudent != null) {
+                    studentsRegistered++;
+                }
+            }
+        }
     }
 
+
+
+
+    private boolean addStudentToCourse(Student student, Course course) {
+        int studentNum = getStudentNum();
+        if (studentNum < MAX_STUDENTS_PER_COURSE) {
+            course.getStudents()[studentNum] = student;
+            setStudentNum(studentNum + 1);
+            return true;
+        }
+        return false;
+    }
+    private boolean registerCourseForStudent(Student student, Course course) {
+        int courseNum = getCourseNum();
+        if (courseNum < MAX_COURSES_PER_STUDENT) {
+            student.getCourses()[courseNum] = course;
+            setCourseNum(courseNum + 1);
+            return true;
+        }
+        return false;
+    }
 }

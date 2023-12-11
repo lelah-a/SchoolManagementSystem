@@ -34,6 +34,7 @@ public class Course {
         this.department = department;
     }
 
+
     @Override
     public String toString() {
         return "Course{" +
